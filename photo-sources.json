@@ -1,0 +1,38 @@
+[
+  {
+    "local_path": "assets/hero-bike-tree.webp",
+    "source_file": "Field_Photo_Background.jpg",
+    "google_drive_url": "https://drive.google.com/file/d/11_QKh6HIJ_iJ5cSbPE0C7use4e9liYH4/view",
+    "usage": "Hero / bicycle by tree"
+  },
+  {
+    "local_path": "assets/powers-aerial-overview.webp",
+    "source_file": "dji_fly_20261013_124136_23_1791921193678_photo_optimized.jpg",
+    "google_drive_url": "https://drive.google.com/file/d/1AmMFJPuQpTn2m2NbkyczgUwdj-No_GaG/view",
+    "usage": "Gallery wide field"
+  },
+  {
+    "local_path": "assets/powers-barn-aerial.webp",
+    "source_file": "dji_fly_20261013_125308_43_1791921271862_photo_optimized.jpg",
+    "google_drive_url": "https://drive.google.com/file/d/19RvXlOoGJBWvP6bpKCY0MSVjEVwWjVOg/view",
+    "usage": "Gallery barn"
+  },
+  {
+    "local_path": "assets/powers-field-drone.webp",
+    "source_file": "dji_fly_20261013_125412_46_1791921303000_photo_optimized.jpg",
+    "google_drive_url": "https://drive.google.com/file/d/1waHwGYq8Fq0I1x7rF4W7cjKgggZf7LN5/view",
+    "usage": "Issue image"
+  },
+  {
+    "local_path": "assets/powers-roadside-landscape.webp",
+    "source_file": "IMG_3925.jpg",
+    "google_drive_url": "https://drive.google.com/file/d/1hmh4ejDuhHAJYkg02MeUUYvTNQscqRVA/view",
+    "usage": "Gallery roadside"
+  },
+  {
+    "local_path": "assets/social-preview.jpg",
+    "source_file": "Field_Photo_Background.jpg",
+    "google_drive_url": "https://drive.google.com/file/d/11_QKh6HIJ_iJ5cSbPE0C7use4e9liYH4/view",
+    "usage": "OpenGraph preview"
+  }
+]
