@@ -1,4 +1,4 @@
-# Saving Powers — static website update (October 19, 2026)
+# Saving Powers — October 20 vote and appeal-preparation update
 
 Static HTML/CSS/JavaScript for deployment on Vercel from `MedicatedGorilla/Saving_Powers`.
 
@@ -17,15 +17,16 @@ git push origin main
 
 Vercel should redeploy after `main` is updated. Inspect your `.vercel.app` preview before changing any custom-domain settings.
 
-## County meeting status / countdown
+## October 20 vote and appeal preparation
 
-* Before **Oct 20, 2026, 9:00 AM Pacific**: countdown to the scheduled meeting start.
-* Oct 20, **9:00–11:00 AM Pacific**: `Meeting ongoing`. This is a *time-based website label*, not verified real-time meeting status.
-* From **11:00 AM Pacific onward**: `Check back in a few hours` and a clear pending-verification message; no result or legal deadline is assumed.
-* The status is client-side JS in `index.html`; no server, Git action, or scheduling is needed. **The post-11-AM message stays in place until a human edits the site.**
-* Once a final written decision is verified, manually revise the status and appeal narrative. LUBA generally measures the notice-of-intent-to-appeal deadline from when the land-use decision becomes final, **not automatically from the meeting start**.
+* On **October 20, 2026**, Benton County commissioners voted **2–1** in favor of Northside Church's proposal (case **LU-25-067**).
+* The expired meeting countdown, live meeting-status script, and pre-meeting instructions were removed from the rendered page. The homepage and timeline now reflect the vote.
+* The site emphasizes the **next three weeks as a critical organizing and fundraising period** while Saving Powers prepares a possible appeal to Oregon's Land Use Board of Appeals (LUBA).
+* **Do not publish a fixed filing deadline until confirmed by counsel.** LUBA generally requires a Notice of Intent to Appeal within 21 days after a land-use decision becomes legally final, which is not necessarily the hearing date.
+* The appeal messaging expresses **intent and preparation**, not a claim that a LUBA appeal has already been filed.
+* The appeal/status text is static; update it manually when the written decision, legal finality, or filing status is confirmed.
 
-Official County meeting information: https://boc.bentoncountyor.gov/events/october-20-2026-board-of-commissioners-meeting/
+Official Board meeting information: https://boc.bentoncountyor.gov/events/october-20-2026-board-of-commissioners-meeting/
 Oregon LUBA FAQ: https://www.oregon.gov/luba/pages/frequently-asked-questions.aspx
 
 ## Photos and documents
