@@ -857,6 +857,61 @@ button, input, textarea, select { font: inherit; }
 }
 
 
+
+/* Built-in, keyboard-accessible image viewer: no dependencies required. */
+.landscape-photo a, .poster-grid a, .photo-card > a, .plan-figure > a { cursor: zoom-in; }
+.photo-card > a, .plan-figure > a { display: block; }
+.site-lightbox {
+  box-sizing: border-box;
+  width: min(1120px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 18px;
+  background: #17201a;
+  color: #f9f8f1;
+  box-shadow: 0 35px 110px rgba(0,0,0,.50);
+  overflow: hidden;
+}
+.site-lightbox::backdrop { background: rgba(8,15,11,.88); }
+.site-lightbox[open] { display: block; }
+.site-lightbox-inner { position: relative; display: flex; flex-direction: column; max-height: calc(100dvh - 32px); }
+.site-lightbox-close {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  width: 44px; height: 44px; display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,.35); border-radius: 50%;
+  background: rgba(13,25,18,.8); color: white;
+  cursor: pointer; font: 400 2rem/1 Arial, sans-serif;
+}
+.site-lightbox-close:hover, .site-lightbox-arrow:hover { background: #355743; }
+.site-lightbox button:focus-visible { outline: 3px solid #f5d994; outline-offset: 3px; }
+.site-lightbox-media { min-height: 0; display: grid; place-items: center; padding: 16px 16px 0; }
+.site-lightbox-image { display: block; max-width: 100%; width: auto; height: auto; max-height: calc(100dvh - 178px); object-fit: contain; border-radius: 6px; }
+.site-lightbox-toolbar {
+  display: grid; grid-template-columns: 54px minmax(0,1fr) 54px;
+  gap: 16px; align-items: center; padding: 14px 18px 18px;
+}
+.site-lightbox-arrow {
+  width: 48px; height: 48px; display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,.24); border-radius: 50%;
+  background: rgba(255,255,255,.08); color: white;
+  cursor: pointer; font: 400 1.6rem/1 Arial,sans-serif;
+}
+.site-lightbox-arrow[hidden] { display: none; }
+.site-lightbox-caption { margin: 0; text-align: center; font-size: .95rem; line-height: 1.4; }
+.site-lightbox-count { display: block; margin-top: 5px; text-align: center; color: #b9c8bd; font-size: .77rem; letter-spacing: .04em; }
+@media (max-width: 620px) {
+  .site-lightbox { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); border-radius: 12px; }
+  .site-lightbox-inner { max-height: calc(100dvh - 16px); }
+  .site-lightbox-media { padding: 56px 8px 0; }
+  .site-lightbox-image { max-height: calc(100dvh - 213px); }
+  .site-lightbox-toolbar { grid-template-columns: 42px minmax(0,1fr) 42px; gap: 7px; padding: 14px 10px 16px; }
+  .site-lightbox-arrow { width: 40px; height: 40px; }
+  .site-lightbox-caption { font-size: .86rem; }
+}
+
 </style>
 <link href="https://www.savingpowers.com/" rel="canonical"/><meta content="https://www.savingpowers.com/" property="og:url"><link as="image" href="assets/hero-bike-tree.webp" rel="preload"/></meta></head>
 <body>
@@ -1253,6 +1308,24 @@ button, input, textarea, select { font: inherit; }
 </div>
 </section>
 </main>
+
+<!-- Native dialog image viewer for neighborhood photography, plans, and campaign graphics. -->
+<dialog class="site-lightbox" id="site-lightbox" aria-label="Image viewer">
+  <div class="site-lightbox-inner">
+    <button type="button" class="site-lightbox-close" aria-label="Close image viewer">&times;</button>
+    <div class="site-lightbox-media">
+      <img class="site-lightbox-image" alt="" decoding="async"/>
+    </div>
+    <div class="site-lightbox-toolbar">
+      <button type="button" class="site-lightbox-arrow" data-viewer-prev aria-label="Previous image">&larr;</button>
+      <div>
+        <p class="site-lightbox-caption"></p>
+        <span class="site-lightbox-count" aria-live="polite"></span>
+      </div>
+      <button type="button" class="site-lightbox-arrow" data-viewer-next aria-label="Next image">&rarr;</button>
+    </div>
+  </div>
+</dialog>
 <footer class="site-footer">
 <div class="shell footer-inner">
 <div>
@@ -1376,6 +1449,119 @@ button, input, textarea, select { font: inherit; }
       status.textContent = `${total} document${total === 1 ? '' : 's'}${query ? ' matching your search' : ''}`;
     });
   })();
+
+  // Accessible gallery viewer: native dialog, arrow/Escape keys, mobile swipe.
+  (() => {
+    const dialog = document.getElementById('site-lightbox');
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+
+    const picture = dialog.querySelector('.site-lightbox-image');
+    const caption = dialog.querySelector('.site-lightbox-caption');
+    const position = dialog.querySelector('.site-lightbox-count');
+    const closeButton = dialog.querySelector('.site-lightbox-close');
+    const previous = dialog.querySelector('[data-viewer-prev]');
+    const next = dialog.querySelector('[data-viewer-next]');
+    const groups = { landscape: [], plans: [], flyers: [] };
+    let group = 'landscape';
+    let index = 0;
+    let lastTrigger = null;
+    let previousOverflow = '';
+    let touchStart = null;
+
+    // Turn the intro photo and both site-plan graphics into keyboard-usable links.
+    // If JavaScript is unavailable, their original static images remain visible.
+    document.querySelectorAll('.photo-card > img, .plan-figure > img').forEach(img => {
+      const anchor = document.createElement('a');
+      anchor.href = img.getAttribute('src');
+      anchor.setAttribute('aria-label', 'Enlarge image: ' + img.alt);
+      anchor.dataset.viewerLink = '';
+      img.parentNode.insertBefore(anchor, img);
+      anchor.appendChild(img);
+    });
+
+    const links = document.querySelectorAll(
+      '.photo-card a[data-viewer-link], .landscape-photo a[href], ' +
+      '.plan-figure a[data-viewer-link], .poster-grid a[href]'
+    );
+    links.forEach(link => {
+      const img = link.querySelector('img');
+      if (!img) return;
+      const gallery = link.closest('.poster-grid') ? 'flyers' :
+        link.closest('.plan-figure') ? 'plans' : 'landscape';
+      const figure = link.closest('figure');
+      const figureCaption = figure && figure.querySelector('figcaption');
+      const item = {
+        src: link.href,
+        alt: img.alt || 'Gallery image',
+        caption: figureCaption ? figureCaption.textContent.trim() : img.alt,
+        link: link
+      };
+      groups[gallery].push(item);
+      link.setAttribute('aria-haspopup', 'dialog');
+      link.addEventListener('click', event => {
+        // Preserve normal browser link behavior for modifier-clicks.
+        if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        group = gallery;
+        index = groups[gallery].indexOf(item);
+        lastTrigger = link;
+        showImage();
+        previousOverflow = document.body.style.overflow;
+        dialog.showModal();
+        document.body.style.overflow = 'hidden';
+        closeButton.focus();
+      });
+    });
+
+    function showImage() {
+      const items = groups[group];
+      if (!items.length) return;
+      const item = items[index];
+      picture.src = item.src;
+      picture.alt = item.alt;
+      caption.textContent = item.caption;
+      position.textContent = (index + 1) + ' of ' + items.length;
+      previous.hidden = next.hidden = items.length < 2;
+    }
+
+    function navigate(delta) {
+      const length = groups[group].length;
+      if (!length) return;
+      index = (index + delta + length) % length;
+      showImage();
+    }
+
+    closeButton.addEventListener('click', () => dialog.close());
+    previous.addEventListener('click', () => navigate(-1));
+    next.addEventListener('click', () => navigate(1));
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      document.body.style.overflow = previousOverflow;
+      if (lastTrigger && lastTrigger.isConnected) lastTrigger.focus();
+    });
+    document.addEventListener('keydown', event => {
+      if (!dialog.open) return;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+        event.preventDefault();
+        navigate(event.key === 'ArrowRight' ? 1 : -1);
+      }
+      // Escape is handled by the native <dialog> element.
+    });
+    dialog.addEventListener('touchstart', event => {
+      if (event.touches.length !== 1) { touchStart = null; return; }
+      touchStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+    }, { passive: true });
+    dialog.addEventListener('touchend', event => {
+      if (!touchStart || !event.changedTouches.length) return;
+      const dx = event.changedTouches[0].clientX - touchStart.x;
+      const dy = event.changedTouches[0].clientY - touchStart.y;
+      touchStart = null;
+      if (Math.abs(dx) >= 55 && Math.abs(dx) > Math.abs(dy) * 1.4) navigate(dx < 0 ? 1 : -1);
+    }, { passive: true });
+  })();
+
 </script>
 </body>
 </html>
