@@ -1,0 +1,45 @@
+name: One-time public records migration
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/migrate-public-records-once.yml'
+permissions:
+  contents: write
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out current website
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download and validate original PDFs
+        run: python3 scripts/migrate_documents.py --timeout 90
+      - name: Verify PDFs match manifest and are suitable for GitHub
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          docs=json.loads(Path('documents-manifest.json').read_text())
+          local=[d for d in docs if d['status']=='local']
+          external=[d for d in docs if d['status']!='local']
+          print(f'Migration: {len(local)} local; {len(external)} still external')
+          for d in local:
+              p=Path(d['local_path'])
+              assert p.exists() and p.read_bytes().startswith(b'%PDF-'), d['title']
+              assert p.stat().st_size < 90*1024*1024, f'File too large for GitHub: {p}'
+          for d in external: print('FAILED:',d['title'],d['original_url'])
+          PY
+      - name: Commit migrated PDFs and updated links
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html documents-manifest.json documents/
+          if git diff --cached --quiet; then
+            echo "No PDFs migrated; no changes to commit."
+          else
+            git commit -m "Migrate available public record PDFs into website"
+            git push origin HEAD:main
+          fi
