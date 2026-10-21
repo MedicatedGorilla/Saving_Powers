@@ -926,6 +926,55 @@ button, input, textarea, select { font: inherit; }
 @media (max-width: 850px) { .appeal-action { grid-template-columns: 1fr; gap: 20px; } .appeal-action-links { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width: 620px) { .appeal-action { margin-top: 27px; padding: 22px 19px; border-radius: 17px; } .appeal-action h3 { font-size: clamp(1.9rem,8vw,2.65rem); } .appeal-action-links { grid-template-columns: 1fr; } .status-band-grid { gap: 19px; } .status-note { padding-left: 17px; } }
 
+
+/* Floating return-to-top link; existing site scroll behavior handles reduced motion. */
+.back-to-top {
+  position: fixed;
+  right: calc(22px + env(safe-area-inset-right, 0px));
+  bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-width: 88px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px;
+  background: #183f32;
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(0,0,0,.22);
+  font: 700 .9rem/1 system-ui, sans-serif;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.back-to-top:hover { background: #245844; color: #fff; }
+.back-to-top:focus-visible { outline: 3px solid #d7b36d; outline-offset: 4px; }
+.back-to-top-arrow { font-size: 1.3rem; line-height: 1; }
+@media (max-width: 620px) {
+  .back-to-top {
+    right: calc(14px + env(safe-area-inset-right, 0px));
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    min-width: 76px;
+    min-height: 44px;
+    padding: 9px 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top { transition: none; transform: none; }
+}
+
 </style>
 <link href="https://www.savingpowers.com/" rel="canonical"/><meta content="https://www.savingpowers.com/" property="og:url"><link as="image" href="assets/hero-bike-tree.webp" rel="preload"/></meta></head>
 <body>
@@ -1360,6 +1409,9 @@ button, input, textarea, select { font: inherit; }
 <p class="fine-print">The October 20 vote is reported from the Board meeting. The legal finality date and exact appeal deadline are still being confirmed. For controlling details, consult the official written decision and public record.</p>
 </div>
 </footer>
+<a class="back-to-top" id="back-to-top" href="#top" aria-label="Back to top">
+  <span class="back-to-top-arrow" aria-hidden="true">↑</span><span>Top</span>
+</a>
 <script>
     // Progressive mobile disclosure: keep full content reachable without heavy scrolling.
     (() => {
@@ -1525,6 +1577,16 @@ button, input, textarea, select { font: inherit; }
       touchStart = null;
       if (Math.abs(dx) >= 55 && Math.abs(dx) > Math.abs(dy) * 1.4) navigate(dx < 0 ? 1 : -1);
     }, { passive: true });
+  })();
+
+
+  // Show the return-to-top link only after visitors have scrolled down.
+  (() => {
+    const link = document.getElementById('back-to-top');
+    if (!link) return;
+    const update = () => link.classList.toggle('is-visible', window.scrollY > 650);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   })();
 
 </script>
