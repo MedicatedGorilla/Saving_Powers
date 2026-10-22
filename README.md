@@ -39,3 +39,5 @@ Oregon LUBA FAQ: https://www.oregon.gov/luba/pages/frequently-asked-questions.as
 ## Updating appearance
 
 The `index.html` includes the CSS and JavaScript; there is no build step. Mobile navigation, timeline and photo gallery are streamlined with progressive disclosure. The desktop page retains the full archive and timeline.
+
+<!-- Redeployment trigger: 2026-10-21; no website content changes. -->
