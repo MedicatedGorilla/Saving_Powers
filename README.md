@@ -17,17 +17,17 @@ git push origin main
 
 Vercel should redeploy after `main` is updated. Inspect your `.vercel.app` preview before changing any custom-domain settings.
 
-## October 20 vote and appeal preparation
+## October 2026 final County decision and appeal preparation
 
-* On **October 20, 2026**, Benton County commissioners voted **2–1** in favor of Northside Church's proposal (case **LU-25-067**).
-* The expired meeting countdown, live meeting-status script, and pre-meeting instructions were removed from the rendered page. The homepage and timeline now reflect the vote.
-* The site emphasizes the **next three weeks as a critical organizing and fundraising period** while Saving Powers prepares a possible appeal to Oregon's Land Use Board of Appeals (LUBA).
-* **Do not publish a fixed filing deadline until confirmed by counsel.** LUBA generally requires a Notice of Intent to Appeal within 21 days after a land-use decision becomes legally final, which is not necessarily the hearing date.
-* The appeal messaging expresses **intent and preparation**, not a claim that a LUBA appeal has already been filed.
-* The appeal/status text is static; update it manually when the written decision, legal finality, or filing status is confirmed.
+* The Board voted 2–1 to approve on September 8, 2026, then adopted formal findings and Order **D2026-085** on October 20, 2026.
+* The two-page Benton County **Notice of Decision is dated October 21, 2026**. The notice says LUBA appeals may be filed within 21 days of the decision date.
+* **November 10, 2026 is a conservative working deadline ONLY IF the legally final decision date was October 20.** Counsel must confirm the signed order and controlling deadline. Do not portray the notice date alone as establishing legal finality.
+* The site describes appeal **preparation**, not an appeal already filed.
+* The traffic section distinguishes the earlier 990-ADT county projection from the **683 east / 364 west** forecast accepted in the October 20 findings. 700 ADT is described as a road-class planning benchmark, not an enforceable ceiling.
+* Update site after filing status and controlling deadline are confirmed.
 
-Official Board meeting information: https://boc.bentoncountyor.gov/events/october-20-2026-board-of-commissioners-meeting/
-Oregon LUBA FAQ: https://www.oregon.gov/luba/pages/frequently-asked-questions.aspx
+County meeting and findings: https://bentoncoor.portal.civicclerk.com/event/1052/files/agenda/2992
+LUBA FAQ: https://www.oregon.gov/luba/pages/frequently-asked-questions.aspx
 
 ## Photos and documents
 
