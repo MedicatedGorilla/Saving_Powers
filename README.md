@@ -19,7 +19,7 @@ Vercel should redeploy after `main` is updated. Inspect your `.vercel.app` previ
 
 ## October 2026 final County decision and appeal preparation
 
-* The Board voted 2–1 to approve on September 8, 2026, then adopted formal findings and Order **D2026-085** on October 20, 2026.
+* The Board voted **2–1 on September 8** to approve the application in principle, and **2–1 again on October 20** to adopt formal findings and Order **D2026-085**. These were distinct votes within the same permit case (LU-25-067), not separate permit approvals. The October 20 vote was confirmed by an attendee; the written Notice of Decision confirms the order's adoption but does not report the vote tally.
 * The two-page Benton County **Notice of Decision is dated October 21, 2026**. The notice says LUBA appeals may be filed within 21 days of the decision date.
 * **November 10, 2026 is a conservative working deadline ONLY IF the legally final decision date was October 20.** Counsel must confirm the signed order and controlling deadline. Do not portray the notice date alone as establishing legal finality.
 * The site describes appeal **preparation**, not an appeal already filed.
