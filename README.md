@@ -23,7 +23,7 @@ Vercel should redeploy after `main` is updated. Inspect your `.vercel.app` previ
 * The two-page Benton County **Notice of Decision is dated October 21, 2026**. The notice says LUBA appeals may be filed within 21 days of the decision date.
 * **November 10, 2026 is a conservative working deadline ONLY IF the legally final decision date was October 20.** Counsel must confirm the signed order and controlling deadline. Do not portray the notice date alone as establishing legal finality.
 * The site describes appeal **preparation**, not an appeal already filed.
-* The traffic section distinguishes the earlier 990-ADT county projection from the **683 east / 364 west** forecast accepted in the October 20 findings. 700 ADT is described as a road-class planning benchmark, not an enforceable ceiling.
+* The traffic section distinguishes the earlier **990-ADT county-staff projection** from the **683 east / 364 west ADT** forecast the Board accepted from Sandow Engineering’s revised church-submitted studies. The final findings say County-retained DKS Associates reviewed them and Public Works concurred. The website explicitly avoids claiming the county "ignored its own engineers" and describes **700 ADT** as a road-class planning benchmark rather than a legal limit.
 * Update site after filing status and controlling deadline are confirmed.
 
 County meeting and findings: https://bentoncoor.portal.civicclerk.com/event/1052/files/agenda/2992
