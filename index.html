@@ -982,6 +982,62 @@ button, input, textarea, select { font: inherit; }
 .source-note-light { margin: 12px auto 0; padding-bottom: 14px; color: rgba(255,255,255,.83); }
 .source-note-light a { color: #f6e7b4; }
 @media (max-width: 620px) { .source-note { font-size: .78rem; } }
+
+/* Community yard-sign donation offer */
+#yard-signs { scroll-margin-top: 88px; }
+.sign-drive { background: #f1f3eb; border-bottom: 1px solid #dae1d7; }
+.sign-drive-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.13fr) minmax(0, .87fr);
+  align-items: center;
+  gap: clamp(30px, 5vw, 72px);
+}
+.sign-drive-visual {
+  display: block;
+  padding: 11px;
+  border: 1px solid rgba(24,63,50,.11);
+  border-radius: 21px;
+  background: #fff;
+  text-decoration: none;
+  box-shadow: 0 22px 55px rgba(18,32,24,.13);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.sign-drive-visual:hover { transform: translateY(-3px); box-shadow: 0 28px 65px rgba(18,32,24,.18); }
+.sign-drive-visual:focus-visible { outline: 3px solid var(--rust); outline-offset: 5px; }
+.sign-drive-visual img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; border-radius: 12px; }
+.sign-drive-visual-caption { display: block; padding: 9px 5px 3px; text-align: center; color: var(--muted); font-size: .79rem; font-weight: 750; }
+.sign-drive-copy h2 { margin: 0 0 18px; font-size: clamp(2.35rem, 3.7vw, 3.65rem); line-height: 1.12; }
+.sign-drive-copy h2 em { color: var(--rust); font-style: normal; }
+.sign-drive-copy > p:not(.eyebrow):not(.sign-drive-note) { margin: 0 0 22px; font-size: 1.08rem; }
+.sign-drive-steps { list-style: none; counter-reset: sign-step; display: grid; gap: 15px; margin: 0 0 27px; padding: 0; }
+.sign-drive-steps li { position: relative; min-height: 35px; padding-left: 46px; line-height: 1.5; }
+.sign-drive-steps li::before {
+  counter-increment: sign-step;
+  content: counter(sign-step);
+  position: absolute; top: 1px; left: 0;
+  width: 32px; height: 32px; border-radius: 50%;
+  display: grid; place-items: center;
+  color: #fff; background: var(--forest); font-weight: 850; font-size: .86rem;
+}
+.sign-drive-steps strong { display: block; margin-bottom: 3px; }
+.sign-drive-steps a { color: var(--forest-2); font-weight: 750; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.sign-drive-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.sign-drive-actions .button { text-align: center; }
+.sign-drive-actions .sign-donate { background: var(--forest); color: #fff; }
+.sign-drive-actions .sign-donate:hover { background: var(--forest-2); }
+.sign-drive-actions .sign-email { border: 1px solid var(--forest); color: var(--forest); }
+.sign-drive-actions .sign-email:hover { background: rgba(24,63,50,.07); }
+.sign-drive-note { margin: 16px 0 0; font-size: .86rem; color: var(--muted); }
+.desktop-nav .nav-signs { color: var(--rust); }
+@media (max-width: 1100px) and (min-width: 901px) { .desktop-nav { gap: 14px; } .desktop-nav a { font-size: .85rem; } }
+@media (max-width: 900px) { .sign-drive-layout { grid-template-columns: 1fr; gap: 33px; } .sign-drive-visual { max-width: 690px; margin-inline: auto; } }
+@media (max-width: 540px) {
+  .sign-drive-copy h2 { font-size: clamp(2.1rem, 10vw, 3rem); }
+  .sign-drive-visual { padding: 6px; border-radius: 13px; }
+  .sign-drive-visual img { border-radius: 8px; }
+  .sign-drive-actions .button { width: 100%; }
+}
+
 </style>
 <link href="https://www.savingpowers.com/" rel="canonical"/><meta content="https://www.savingpowers.com/" property="og:url"><link as="image" href="assets/hero-bike-tree.webp" rel="preload"/></meta></head>
 <body>
@@ -1001,6 +1057,7 @@ button, input, textarea, select { font: inherit; }
 <a href="#timeline">Timeline</a>
 <a href="#record">Documents</a>
 <a href="#campaign">Campaign</a>
+<a class="nav-signs" href="#yard-signs">Yard signs</a>
 <a class="nav-cta" href="#help">Get involved</a>
 </nav>
 <details class="mobile-nav">
@@ -1011,6 +1068,7 @@ button, input, textarea, select { font: inherit; }
 <a href="#timeline">Timeline</a>
 <a href="#record">Documents</a>
 <a href="#campaign">Campaign</a>
+<a href="#yard-signs">Yard signs</a>
 <a href="#help">Get involved</a>
 </nav>
 </details>
@@ -1041,6 +1099,30 @@ button, input, textarea, select { font: inherit; }
 </div>
 <p class="shell source-note source-note-light">Source documents: <a href="documents/revised-site-plan-aug-11-2026.pdf" target="_blank" rel="noopener noreferrer">August 11 revised site plan ↗</a> · <a href="documents/saving-powers-final-evidentiary-rebuttal.pdf" target="_blank" rel="noopener noreferrer">Evidentiary rebuttal ↗</a> · <a href="https://bentoncoor.portal.civicclerk.com/event/1052/files/agenda/2992" target="_blank" rel="noopener noreferrer">October 20 county findings packet ↗</a></p>
 </div>
+</section>
+
+
+<section class="section sign-drive" id="yard-signs" aria-labelledby="yard-signs-title">
+  <div class="shell sign-drive-layout">
+    <a class="sign-drive-visual" href="assets/saving-powers-yard-sign.png" target="_blank" rel="noopener noreferrer" aria-label="View the Saving Powers yard sign full size">
+      <img src="assets/saving-powers-yard-sign.png" width="1448" height="1086" alt="Saving Powers Just Say No yard sign opposing Northside Church's campus, showing the proposed building, a crowded parking lot, and the 28,557-square-foot and 286-parking-space figures" loading="lazy" decoding="async"/>
+      <span class="sign-drive-visual-caption">View the sign full size ↗</span>
+    </a>
+    <div class="sign-drive-copy">
+      <p class="eyebrow">Show your support · Yard signs</p>
+      <h2 id="yard-signs-title">A $30 donation gets you a <em>free yard sign.</em></h2>
+      <p>Support the Saving Powers appeal and help make our neighborhood's voice visible.</p>
+      <ol class="sign-drive-steps">
+        <li><strong>Donate $30 or more on GoFundMe.</strong> Use your name rather than donating anonymously so we can match your donation.</li>
+        <li><strong>Email <a href="mailto:savingpowers@gmail.com?subject=Yard%20sign%20and%20donation%20receipt">savingpowers@gmail.com</a>.</strong> Include the name used on GoFundMe to claim your sign and request a receipt for your tax-deductible donation.</li>
+      </ol>
+      <div class="sign-drive-actions">
+        <a class="button sign-donate" href="https://www.gofundme.com/f/protect-our-neighborhood-and-wildlife" target="_blank" rel="noopener noreferrer">Donate on GoFundMe ↗</a>
+        <a class="button sign-email" href="mailto:savingpowers@gmail.com?subject=Yard%20sign%20and%20donation%20receipt">Email to claim your sign</a>
+      </div>
+      <p class="sign-drive-note">Already donated? Email us with the name on your GoFundMe donation to request your sign and tax-deductible donation receipt.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section intro" id="issue">
