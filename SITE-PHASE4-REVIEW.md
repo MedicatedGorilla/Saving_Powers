@@ -29,3 +29,12 @@
 ## Rollback
 - Phase 3 pinned at `backup/site-refresh-phase3-2026-11-07` (commit `838f404954e675fc45c5bfbeb7964bd159e04d04`).
 - Existing Phase 1, original six-page split, and V3 backups remain available.
+
+## Browser QA results — November 7, 2026
+Preview tested: https://savingpowers-git-site-refresh-ty8nkrc2s4-1024.vercel.app/
+
+**Documents page:** browser confirmed original 4 featured cards, 21 archive documents in 5 groups, correct linked source URLs, no visible desktop layout overlap. Clicking **Traffic** set search to `traffic` and showed **2 matching documents** (Greenlight rebuttal, Sandow Engineering Traffic Study). Clicking **Legal** showed **2 matching documents** (Saving Powers Final Legal Rebuttal, Northside Final Legal Arguments). **Clear** restored input to empty, the live status to **21 documents**, and all filing groups. Archive jump navigation worked. These checks exercise the new shortcut listener together with the original archive search; no replacement search engine was required.
+
+**Get Involved page:** browser confirmed Donate, Get a sign, Share materials, Connect cards each scroll to their respective anchors. Tested support → yard-sign anchor and return to support. Original GoFundMe destination, sign instructions, two poster image URLs, Facebook group, and both contact email roles verified. No visible desktop broken images, overflow or overlaps. Payment links and email links were inspected but not submitted/used.
+
+**Known outstanding work:** 390px real responsive browser test was not available in the browser session; must be done in Phase 5. Inherited photo viewer modal/lightbox behavior and keyboard access also require hands-on verification before launch. The November 9 meeting notice and current appeal status must be reviewed at final release. Do not merge while these release gates remain open.
