@@ -78,3 +78,10 @@ Carry forward the current site's actual Georgia/Inter typography, forest/cream c
 - Search the 21-file Documents archive for `traffic`, `legal`, and `site plan`; verify visible counts, group expansion, status feedback, and Clear restoration (no duplicate search handler).
 - Confirm Get Involved's four jump links, unchanged donor instructions, live fundraiser destination, original two campaign posters, Facebook group, and both distinctly labeled contact addresses.
 - Verify production `main` remains at the earlier approved content version; no work on `site-refresh` is automatically merged.
+
+## Northside hero and legibility correction — Nov 7
+- Moved the former Alliance homepage hero photograph (`assets/hero-bike-tree.webp`) into the Northside hero and replaced the Alliance homepage cover with `assets/powers-aerial-overview.webp`.
+- Removed the negative-margin link positioning that overlapped the hero description; Northside CTA links now sit beneath the description in normal flow.
+- Increased the case figures and captions, made the source-record action more prominent, and enlarged the sticky on-page navigation with 44px minimum click targets.
+- Northside HTML's case sections, document links, interactive timeline and gallery code were not modified. Changes are isolated to Northside and the homepage hero image.
+- Verify the new photo crop, desktop typography, mobile wrapping and layout before approving production merge.
