@@ -1187,6 +1187,36 @@ button, input, textarea, select { font: inherit; }
   .community-hub-flyer { max-width: 300px; width: 100%; margin-inline: auto; }
 }
 
+
+/* Feature-sized Alliance flyer: readable directly on desktop without opening the image. */
+.community-hub-header {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+}
+.community-hub-header .community-hub-context {
+  margin-top: 28px;
+}
+.community-hub-support {
+  display: block;
+  min-width: 0;
+}
+.community-hub-flyer {
+  width: 100%;
+  max-width: 535px;
+  padding: 12px;
+  margin: 0 auto;
+}
+.community-hub-flyer figcaption { margin-top: 11px; font-size: .88rem; }
+@media (max-width: 900px) {
+  .community-hub-header { grid-template-columns: 1fr; align-items: start; }
+  .community-hub-support { display: block; }
+  .community-hub-flyer { max-width: 510px; }
+}
+@media (max-width: 620px) {
+  .community-hub-flyer { width: 100%; max-width: 100%; }
+}
+
 </style>
 <link href="https://www.savingpowers.com/" rel="canonical"/><meta content="https://www.savingpowers.com/" property="og:url"><link as="image" href="assets/hero-bike-tree.webp" rel="preload"/></meta></head>
 <body>
@@ -1320,12 +1350,12 @@ button, input, textarea, select { font: inherit; }
         <p class="eyebrow">Saving Powers Alliance · Beyond Powers Avenue</p>
         <h2 id="community-news-heading">Keeping our neighbors informed across Benton County.</h2>
         <p class="community-hub-lede">Saving Powers began with the Northside Church proposal, but thoughtful land-use decisions matter throughout our region. The Alliance is expanding its focus on community information, transparent review, and opportunities for residents to participate.</p>
-      </div>
-      <div class="community-hub-support">
         <aside class="community-hub-context" aria-label="About the Alliance">
           <strong>The Northside campaign remains our immediate focus.</strong>
           <p>We're also sharing public meeting information and planning resources that may matter to neighbors in Albany and the surrounding area. Each proposal has its own process and record.</p>
         </aside>
+      </div>
+      <div class="community-hub-support">
         <figure class="community-hub-flyer">
           <a href="assets/benton-county-land-use-crossroads-2026-11.avif" target="_blank" rel="noopener noreferrer" aria-label="Open the Benton County Land Use at a Crossroads flyer">
             <img src="assets/benton-county-land-use-crossroads-2026-11.avif" width="750" height="1004" loading="lazy" decoding="async" alt="Saving Powers Alliance flyer titled Benton County Land Use at a Crossroads, highlighting property rights, rural zoning standards, and infrastructure compliance">
