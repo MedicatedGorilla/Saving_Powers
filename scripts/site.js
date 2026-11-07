@@ -192,6 +192,7 @@
   if (document.body.dataset.sitePage !== "home" || !location.hash) return;
   const fragments = {
     "community-news":"community.html",
+    "issue":"northside.html", "land-use":"northside.html",
     "photos":"northside.html", "plan":"northside.html",
     "timeline":"timeline.html", "record":"documents.html",
     "campaign":"get-involved.html", "yard-signs":"get-involved.html",

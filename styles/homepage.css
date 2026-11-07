@@ -1,0 +1,51 @@
+
+/* Alliance-first homepage; reuses the original website's components, fonts and colors. */
+.alliance-hero { min-height:700px; }
+.alliance-hero .hero-content { padding:140px 0; }
+.alliance-hero h1 { max-width:1050px; font-size:clamp(3.6rem,6.4vw,7rem); line-height:.96; }
+.alliance-hero .hero-lede { max-width:675px; line-height:1.65; }
+.alliance-hero .hero-shade { background:linear-gradient(90deg,rgba(6,25,16,.9),rgba(6,25,16,.68) 45%,rgba(6,25,16,.10) 96%),linear-gradient(0deg,rgba(6,25,16,.46),transparent 40%); }
+.home-feature .photo-card img { width:100%; height:470px; object-fit:cover; }
+.home-metrics { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid var(--line);padding:21px 0;margin:28px 0 16px; }
+.home-metrics>div+div { border-left:1px solid var(--line);padding-left:16px; }
+.home-metrics>div { padding-right:10px; }
+.home-metrics strong { display:block;font:700 clamp(1.55rem,2.6vw,2.55rem)/1.15 Georgia,"Times New Roman",serif;color:var(--forest);letter-spacing:-.045em; }
+.home-metrics span { display:block;margin-top:8px;font-size:.75rem;color:var(--muted); }
+.home-factnote { font-size:.82rem!important;line-height:1.55; }
+.home-linkrow { display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:25px; }
+.home-planning .community-hub-header { align-items:center; }
+.home-planning-photo { margin:0;border-radius:18px;overflow:hidden;box-shadow:var(--shadow); }
+.home-planning-photo img { width:100%;aspect-ratio:1.7;object-fit:cover; }
+.home-news-list { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px; }
+.home-news-item { position:relative;display:flex;flex-direction:column;gap:12px;min-height:240px;padding:26px 25px 50px;border-radius:17px;text-decoration:none;background:#fff;border:1px solid #d7e0d9;box-shadow:0 12px 28px rgba(18,32,24,.05); }
+.home-news-item:hover { border-color:#8cad90; }
+.home-news-tag { font-size:.69rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--forest-2); }
+.home-news-item strong { font:700 1.5rem/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.02em; }
+.home-news-item>span:not(.home-news-tag):not(.home-news-arrow) { color:var(--muted);font-size:.9rem;line-height:1.55; }
+.home-news-arrow { position:absolute;bottom:15px;right:23px;color:var(--forest);font-size:1.4rem; }
+.home-section-action { margin-top:28px; }
+.home-action { background:var(--forest);color:#fff;padding:85px 0; }
+.home-action-grid { display:grid;grid-template-columns:1.2fr .8fr;gap:65px;align-items:center; }
+.home-action h2 { margin:12px 0 20px;font:700 clamp(2.6rem,5vw,5rem)/1.03 Georgia,"Times New Roman",serif;letter-spacing:-.035em; }
+.home-action p:not(.eyebrow) { color:#e2eee5;max-width:645px;font-size:1.06rem; }
+.home-action-buttons { display:flex;flex-direction:column;gap:13px; }
+.home-action-buttons .button { justify-content:center;text-align:center; }
+.case-resource-links { display:flex;gap:24px;flex-wrap:wrap;padding:22px 0; }
+.case-resource-links a { font-weight:800;color:var(--forest-2);text-decoration:underline;text-underline-offset:4px; }
+@media(max-width:900px){
+.alliance-hero { min-height:650px; }.alliance-hero .hero-content { padding:105px 0 110px; }
+.home-news-list,.home-action-grid { grid-template-columns:1fr; }
+.home-news-item { min-height:0; }.home-action-buttons { flex-direction:row;flex-wrap:wrap; }
+.home-feature .photo-card img { height:auto;max-height:480px; }
+}
+@media(max-width:620px){
+.alliance-hero { min-height:0; }.alliance-hero .hero-content { padding:76px 0 65px; }
+.alliance-hero h1 { font-size:clamp(2.85rem,11vw,4.6rem); }
+.alliance-hero .hero-lede { font-size:1rem;line-height:1.57; }
+.home-metrics strong { font-size:clamp(1.32rem,5.8vw,2rem); }
+.home-metrics>div+div { padding-left:10px; }.home-metrics>div { padding-right:6px; }
+.home-metrics span { font-size:.69rem; }
+.home-linkrow .button { width:100%; }
+.home-news-item { padding:24px 21px 48px; }
+.home-action { padding:62px 0; }.home-action-buttons { flex-direction:column; }.home-action-buttons .button { width:100%; }
+}
