@@ -1,0 +1,45 @@
+
+/* Phase 2: Northside case page. Source site.css remains unchanged. */
+html { scroll-padding-top: 138px; }
+.case-banner-actions { display:flex; gap:23px; flex-wrap:wrap; padding-top:0; margin-top:-45px; padding-bottom:40px; position:relative; z-index:2; }
+.case-banner-actions a,.case-timeline-return a { color:#f7f0d9; font-weight:800; text-underline-offset:4px; }
+.page-banner .case-timeline-return { margin-top:25px; }
+.case-facts { background:#f5f1e6; border-bottom:1px solid #dedbcf; }
+.case-facts-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)) auto; gap:20px; align-items:center; padding-block:22px; }
+.case-facts-grid>div+div { border-left:1px solid #dadacf; padding-left:20px; }
+.case-facts-grid strong { display:block; font:700 clamp(1.6rem,2.5vw,2.4rem)/1.1 Georgia,"Times New Roman",serif; letter-spacing:-.04em; color:var(--forest); }
+.case-facts-grid span { display:block; margin-top:6px; font-size:.76rem; font-weight:700; color:var(--muted); line-height:1.45; }
+.case-facts-grid p { margin:0; font-size:.8rem; }
+.case-facts-grid p a { font-weight:850; color:var(--forest-2); text-underline-offset:3px; }
+.case-section-nav { position:sticky; top:76px; z-index:95; background:rgba(251,250,246,.96); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
+.case-section-links { display:flex; align-items:center; gap:20px; overflow-x:auto; scrollbar-width:thin; scroll-padding-left:18px; padding-block:13px; }
+.case-section-links a { white-space:nowrap; text-decoration:none; font-size:.8rem; font-weight:800; color:var(--forest-2); padding:7px 0; }
+.case-section-links a:hover,.case-section-links a:focus-visible { color:var(--rust); text-decoration:underline; text-underline-offset:5px; }
+.case-section-label { white-space:nowrap; color:var(--muted); font-size:.7rem; font-weight:900; text-transform:uppercase; letter-spacing:.075em; padding-right:14px; border-right:1px solid var(--line); }
+.case-resource-links { display:flex; gap:23px; flex-wrap:wrap; padding-top:25px; padding-bottom:25px; }
+.case-resource-links a { color:var(--forest-2); font-weight:800; font-size:.88rem; text-decoration:underline; text-underline-offset:4px; }
+.case-final-action { background:var(--forest); color:#fff; padding:86px 0; }
+.case-final-grid { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(240px,.75fr); gap:75px; align-items:center; }
+.case-final-action h2 { font:700 clamp(2.5rem,4.3vw,4.6rem)/1.04 Georgia,"Times New Roman",serif; letter-spacing:-.035em; margin:8px 0 23px; }
+.case-final-action p:not(.eyebrow) { color:#e2ede5; line-height:1.65; max-width:660px; font-size:1.05rem; }
+.case-final-links { display:flex; flex-direction:column; gap:12px; }
+.case-final-links .button { justify-content:center; text-align:center; }
+@media(max-width:900px) {
+ .case-facts-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .case-facts-grid p { grid-column:1/-1; }
+ .case-final-grid { grid-template-columns:1fr; gap:30px; }
+ .case-final-links { flex-direction:row; flex-wrap:wrap; }
+}
+@media(max-width:620px) {
+ .case-banner-actions { margin-top:-26px; padding-bottom:28px; gap:15px; font-size:.84rem; }
+ .case-facts-grid { gap:12px; padding-block:17px; }
+ .case-facts-grid>div+div { padding-left:11px; }
+ .case-facts-grid strong { font-size:clamp(1.4rem,6vw,2rem); }
+ .case-facts-grid span { font-size:.67rem; }
+ .case-section-nav { top:76px; }
+ .case-section-links { gap:17px; }
+ .case-section-label { display:none; }
+ .case-final-action { padding:63px 0; }
+ .case-final-links { flex-direction:column; }
+ .case-final-links .button { width:100%; }
+}

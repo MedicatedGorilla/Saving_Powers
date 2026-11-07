@@ -18,14 +18,16 @@ Carry forward the current site's actual Georgia/Inter typography, forest/cream c
 - Add `scripts/sync-shell.mjs` for one canonical header/footer source (from `index.html`) rather than maintaining six divergent copies.
 - Review the homepage design and its visual continuity before moving on.
 
-## Part 2 — Northside campaign hub [NEXT]
-- Keep the original image lightbox, photo galleries, site plans, traffic analysis, concerns, and status notes.
-- Reorganize sections around a case overview, concerns, evidence, site plans, historical timeline, then actions.
-- Bring the existing 8-event timeline into the Northside case rather than requiring a standalone nav destination.
-- Preserve `timeline.html` links or redirect them carefully to the new `northside.html#timeline`.
-- Test the native dialog image viewer and mobile timeline controls.
+## Part 2 — Northside campaign hub [IMPLEMENTED — review pending]
+- Keep the original image lightbox, photo galleries, site plans, traffic analysis, concerns, and county status notes — all content preserved.
+- Organize the case as overview, status, concerns, site plans, photos, traffic evidence, timeline, broader land-use context and action.
+- Embed the original eight-event interactive timeline without editing its HTML or core JavaScript. Its original mobile condensed/expanded behavior remains wired to the same IDs.
+- Add an accessible, horizontally scrollable case jump navigation with stable anchors; use a dedicated additive `styles/northside.css` so site-wide CSS is not rewritten.
+- Leave `timeline.html` as a standalone page for older external links, with an explicit link back to `northside.html#timeline`. Old homepage `/#timeline` now points directly to Northside.
+- Add source links near the traffic comparison, key case figures and final Get Involved links.
+- Browser QA for actual lightbox interaction, timeline expansion at 390px and keyboard navigation remains an explicit gate for Phase 5.
 
-## Part 3 — Community Planning
+## Part 3 — Community Planning [NEXT]
 - Expand Cary's original requested content into a useful, maintained resource: the approved Alliance crossroads flyer, meeting announcements, Knox Butte planning projects, data-center planning discussion, City Council and Planning Department contacts.
 - Distinguish dated meetings from evergreen information; after November 9, archive or update its meeting notice.
 - No unsupported claim that Knox Butte is on a specific posted agenda.
@@ -50,3 +52,9 @@ Carry forward the current site's actual Georgia/Inter typography, forest/cream c
 ## Maintenance
 - To edit navigation or the footer across pages, edit the canonical markup in `index.html`, then run `node scripts/sync-shell.mjs` and commit updated HTML. Run `node scripts/sync-shell.mjs --check` to detect divergence.
 - No new front-end framework or Vercel build settings are required.
+
+## Phase 2 handoff QA
+- All 8 original timeline events are embedded in the Northside page, and the separate timeline page retains its copy for inbound URLs.
+- No status/factual copy or citation target was deleted; section wrappers were only reordered and given stable anchors.
+- The case jump navigation relies on native anchor links and respects the sticky header with `scroll-padding-top`.
+- Date-sensitive appeal claims are left as originally published and must be checked before production deployment.
