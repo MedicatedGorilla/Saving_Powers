@@ -27,11 +27,16 @@ Carry forward the current site's actual Georgia/Inter typography, forest/cream c
 - Add source links near the traffic comparison, key case figures and final Get Involved links.
 - Browser QA for actual lightbox interaction, timeline expansion at 390px and keyboard navigation remains an explicit gate for Phase 5.
 
-## Part 3 — Community Planning [NEXT]
-- Expand Cary's original requested content into a useful, maintained resource: the approved Alliance crossroads flyer, meeting announcements, Knox Butte planning projects, data-center planning discussion, City Council and Planning Department contacts.
-- Distinguish dated meetings from evergreen information; after November 9, archive or update its meeting notice.
-- No unsupported claim that Knox Butte is on a specific posted agenda.
-- Consider migrating `community.html` to `planning.html` if worth it, preserving legacy links.
+## Part 3 — Community Planning [IMPLEMENTED — review pending]
+- Built a dedicated Community Planning page within the existing `community.html` route, preserving the old `#community-news` anchor and the exact approved Alliance flyer.
+- Segmented the content into Public Meetings, Issues to Watch, How to Participate, and Official Resources, with clear jump navigation.
+- Added a November 9 Albany Planning Commission meeting spotlight linked to the original agenda and official City calendar.
+- Added cautious, source-linked cards for Knox Butte/Albany projects and data-center policy discussion; no assertion that policy is adopted or that Knox Butte is on the November 9 agenda.
+- Added official Planning Division/Council/Commission resource directory and resident testimony guidance.
+- Automatically switches the November 9 event into a past-meeting notice after November 9 (Oregon date) via `scripts/planning-updates.js`; homepage teaser updates in parallel.
+- Styling isolated in `styles/planning.css`, leaving `styles/site.css` and original functionality untouched.
+- Maintenance and source checklist: `SITE-PLANNING-EDITORIAL.md`.
+- Human editor must still replace dated highlights with new verified events; responsive QA pending.
 
 ## Part 4 — Documents and Get Involved
 - Preserve the searchable 21-document index; add clearer key-document previews and case-specific links.
@@ -58,3 +63,8 @@ Carry forward the current site's actual Georgia/Inter typography, forest/cream c
 - No status/factual copy or citation target was deleted; section wrappers were only reordered and given stable anchors.
 - The case jump navigation relies on native anchor links and respects the sticky header with `scroll-padding-top`.
 - Date-sensitive appeal claims are left as originally published and must be checked before production deployment.
+
+## Phase 3 handoff QA
+- Preserve legacy `community.html#community-news`, but link new homepage teasers directly to `#meetings`, `#issues`, and `#resources`.
+- Flyer's original 750x1004 AVIF asset remains unchanged; image stays a clickable full-size link.
+- Meeting labels automatically age, but do not auto-claim an outcome or fabricate minutes.
