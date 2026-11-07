@@ -30,3 +30,10 @@ This is a full redesign, not a color tweak. It retains the original Georgia disp
 - Check email address, donation claims, and sign instructions with group organizers.
 - On release, remove preview banner, refresh time-sensitive wording and social-preview metadata.
 - Do not merge without owner approval.
+
+## Visual-only polish pass (V3, 2026-11-06)
+- V2 design pinned to `backup/site-refresh-v2-2026-11-06` at `7890854b1cc2e3bbeeb1ac067d3a5da1895dae16` before edits.
+- Added `styles/visual-polish.css` after `styles/site.css` on all five pages. This is an intentionally isolated design experiment, not a content/feature change; consolidate the stylesheets only after approval.
+- Design details: richer green palette, restrained cream accent, spacious editorial layout, elevated photography, tactile news rows, premium cards, refined nav/CTAs, interior page headers, sophisticated archive/timeline panels, and responsive design at 800px/570px.
+- Respect reduced motion and keyboard focus; no content, source links, or interactive behavior changed.
+- Roll back by restoring `site-refresh` to the pinned V2 commit (or revert the V3 styling commit). Do not merge without explicit user approval.
