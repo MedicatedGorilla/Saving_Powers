@@ -30,3 +30,6 @@ This branch (`site-refresh`) is an isolated, unmerged first-pass redesign. DO NO
 - Git backup: `backup/pre-site-refresh-2026-11-06` at `ced5dd1bc42ed3c610217e91fcd6c7c3d1e52c95`.
 - Known-good production deployment: `dpl_BVd2jEbUrk3pzJVFkMsMr6L1jgGD`.
 - If a future production merge goes wrong: request a Vercel production rollback to the known-good deployment and revert the Git merge on `main` so new builds cannot restore the broken version.
+
+## Visual identity alignment (2026-11-06)
+Compared styles with the original main-branch website. The original uses Georgia serif for prominent headings/wordmark, Inter/system sans for body copy, and a forest-green/cream/moss palette (`#183f32`, `#245844`, `#f5f1e6`, `#eef1ec`). The draft originally used all-sans headings and stronger brown/rust accents. Refreshed pages now restore the serif/sans hierarchy, the classic SP roundel, forest CTAs, green metadata labels, and more visible rural hero imagery. The detailed Northside page continues to use the original production CSS and typography, preserving continuity. All changes remain preview-only.
