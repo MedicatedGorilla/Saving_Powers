@@ -1,0 +1,64 @@
+
+/* Community Planning: additive styles that preserve the original site design. */
+html{scroll-padding-top:92px}
+.planning-banner{padding:clamp(64px,8vw,96px) 0}
+.planning-intro{padding-bottom:62px}
+.planning-intro .community-hub-header{align-items:center;margin-bottom:30px}
+.planning-intro .community-hub-header h2{font-size:clamp(2.2rem,4vw,4.15rem)}
+.planning-intro .community-hub-lede{margin-bottom:22px}
+.planning-intro .community-hub-context{margin:24px 0}
+.planning-intro .community-hub-support{display:block;min-width:0}
+.planning-intro .community-hub-flyer{width:100%;max-width:540px;margin:0 auto;padding:12px}
+.planning-intro .community-hub-flyer img{width:100%;height:auto}
+.planning-link{color:var(--forest-2);font-weight:800;line-height:1.5;text-decoration:underline;text-underline-offset:4px}
+.planning-link:hover{color:var(--rust)}
+.planning-jump{display:flex;flex-wrap:wrap;align-items:center;gap:10px;border-top:1px solid #d9e0da;padding-top:24px}
+.planning-jump span{margin-right:auto;font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.planning-jump a{padding:10px 15px;border-radius:999px;background:#fff;border:1px solid #cbd8cc;color:var(--forest);font-weight:850;font-size:.81rem;text-decoration:none}
+.planning-jump a:hover{color:#fff;background:var(--forest)}
+.planning-heading{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(270px,.7fr);gap:clamp(25px,5vw,70px);align-items:end;margin-bottom:36px}
+.planning-heading>p{color:var(--muted);line-height:1.65;margin:0 0 6px}
+.planning-meetings{background:var(--paper)}
+.planning-meeting{display:grid;grid-template-columns:108px 1fr;gap:31px;padding:clamp(22px,4vw,39px);border-radius:21px;background:#fff;border:1px solid #d8e2da;box-shadow:0 15px 36px rgba(18,32,24,.06)}
+.planning-date{display:flex;flex-direction:column;align-items:center;justify-content:center;width:106px;height:136px;background:var(--forest);border-radius:15px;color:white}
+.planning-date span{font-size:.74rem;font-weight:900;letter-spacing:.1em}
+.planning-date strong{font:700 3.25rem/1 Georgia,serif;letter-spacing:-.06em;margin:5px 0}
+.planning-tags{display:flex;flex-wrap:wrap;gap:8px}
+.planning-tag{padding:6px 11px;background:#e9f1e8;border-radius:999px;color:var(--forest-2);text-transform:uppercase;letter-spacing:.07em;font-size:.7rem;font-weight:900}
+.planning-tag-neutral{color:#66543b;background:#f5f1e6}
+.planning-meeting h3{margin:16px 0 12px;font:700 clamp(1.9rem,3vw,2.8rem)/1.15 Georgia,serif;letter-spacing:-.03em}
+.planning-meeting-copy>p{max-width:820px;color:#46594c;line-height:1.7}
+.planning-where{display:flex;flex-wrap:wrap;gap:6px 19px;color:var(--forest)!important;font-weight:800}
+.planning-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px 22px;margin-top:26px}
+.planning-note{font-size:.83rem;color:var(--muted)!important}
+.planning-meeting-more{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-top:25px;border-bottom:1px solid var(--line);padding-bottom:19px}
+.planning-meeting-more p{margin:0;color:var(--muted)}
+.planning-issues{background:var(--cream);border-block:1px solid #e3ddcd}
+.planning-issue-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.planning-issue{display:flex;flex-direction:column;align-items:flex-start;padding:clamp(23px,3vw,38px);background:white;border:1px solid #deded5;border-radius:19px}
+.planning-kicker{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:var(--forest-2)}
+.planning-issue h3{font:700 clamp(1.8rem,2.8vw,2.6rem)/1.15 Georgia,serif;letter-spacing:-.03em;margin:22px 0 18px}
+.planning-issue p{color:var(--muted);line-height:1.68;margin:0 0 17px}
+.planning-issue>.planning-link,.planning-issue-links{margin-top:auto;padding-top:16px}
+.planning-issue-links{display:flex;flex-wrap:wrap;gap:14px 20px}
+.planning-participate{background:#fff}
+.planning-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.planning-step{padding:25px 21px;background:#f7f9f6;border-top:4px solid var(--forest);border-radius:0 0 15px 15px}
+.planning-step>span{display:block;font:700 2.2rem Georgia,serif;color:var(--moss)}
+.planning-step h3{font:700 1.45rem Georgia,serif;margin:15px 0 12px}
+.planning-step p{color:var(--muted);font-size:.92rem;line-height:1.65;margin:0}
+.planning-step a{color:var(--forest-2);font-weight:800}
+.planning-caution{background:#faf6ed;border-left:4px solid var(--gold);color:#564b35;margin-top:26px;padding:15px 19px;line-height:1.65}
+.planning-resources{background:#eef1ec}
+.planning-resources-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.planning-resource{display:flex;flex-direction:column;align-items:flex-start;gap:13px;padding:25px;background:white;border:1px solid #d7e0d9;border-radius:18px}
+.planning-resource-icon{display:grid;place-items:center;width:43px;height:43px;background:var(--forest);border-radius:50%;color:#fff;font-weight:900;font-size:.82rem}
+.planning-resource h3{margin:8px 0 0;font:700 1.5rem Georgia,serif}
+.planning-resource p{color:var(--muted);line-height:1.6;margin:0;font-size:.92rem}
+.planning-resource>.planning-link{margin-top:auto;padding-top:15px}
+.planning-resource p a{color:var(--forest-2);font-weight:850}
+.planning-review-note{color:var(--muted);font-size:.8rem;margin-top:28px}
+.planning-meeting[data-meeting-past=true] .planning-date{background:#5b7060}
+[data-planning-meeting-after][hidden]{display:none!important}
+@media(max-width:900px){.planning-heading{grid-template-columns:1fr;gap:14px}.planning-issue-grid{grid-template-columns:1fr}.planning-steps,.planning-resources-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.planning-jump span{width:100%}.planning-jump a{padding:8px 12px}.planning-meeting{grid-template-columns:1fr;gap:16px;padding:19px}.planning-date{width:max-content;height:52px;padding:10px 16px;flex-direction:row;gap:9px}.planning-date strong{font-size:2rem;margin:0}.planning-where{display:grid}.planning-actions{flex-direction:column;align-items:stretch}.planning-actions .button{width:100%;text-align:center}.planning-steps,.planning-resources-grid{grid-template-columns:1fr}.planning-issue,.planning-resource{padding:23px}.planning-intro .community-hub-flyer{max-width:100%}}
