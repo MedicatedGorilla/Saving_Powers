@@ -1038,6 +1038,185 @@ button, input, textarea, select { font: inherit; }
   .sign-drive-actions .button { width: 100%; }
 }
 
+
+/* Community updates: compact extension of the existing Saving Powers design. */
+.community-hub {
+  background: #eef1ec;
+  border-block: 1px solid #dce4dd;
+}
+.community-hub-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(270px, .9fr);
+  gap: clamp(30px, 6vw, 90px);
+  align-items: start;
+  margin-bottom: 35px;
+}
+.community-hub h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 4.3vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -.035em;
+  margin: 0 0 16px;
+}
+.community-hub-lede { max-width: 740px; font-size: 1.13rem; line-height: 1.65; color: #35483b; margin: 0; }
+.community-hub-context {
+  background: #fff;
+  border: 1px solid #d7e0d9;
+  border-left: 4px solid var(--moss);
+  border-radius: 14px;
+  padding: 21px 23px;
+  box-shadow: 0 12px 26px rgba(18,32,24,.04);
+}
+.community-hub-context strong { display: block; margin-bottom: 7px; color: var(--forest); }
+.community-hub-context p { color: var(--muted); line-height: 1.55; margin: 0; font-size: .94rem; }
+.community-hub-title {
+  margin: 0 0 17px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 2.7vw, 2.4rem);
+  letter-spacing: -.025em;
+  line-height: 1.15;
+}
+.community-hub-items { display: grid; gap: 11px; }
+.community-hub-item {
+  background: white;
+  border: 1px solid #d7dfd8;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.community-hub-item summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 21px 25px;
+  list-style: none;
+  font-size: 1.05rem;
+  font-weight: 780;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.community-hub-item summary::-webkit-details-marker { display: none; }
+.community-hub-item summary::after {
+  content: "+";
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 31px;
+  height: 31px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: #e9efea;
+  color: var(--forest);
+  font-size: 1.18rem;
+  font-weight: 600;
+}
+.community-hub-item[open] summary::after { content: "−"; background: var(--forest); color: #fff; }
+.community-hub-item summary:focus-visible { outline: 3px solid var(--moss); outline-offset: -5px; }
+.community-hub-date {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: var(--forest);
+  background: #e6ede3;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.community-hub-body {
+  border-top: 1px solid #e2e8e2;
+  padding: 18px 25px 24px;
+  color: #3e5144;
+  line-height: 1.65;
+}
+.community-hub-body p { margin: 0 0 13px; }
+.community-hub-body p:last-child { margin-bottom: 0; }
+.community-hub-body a { color: var(--forest-2); font-weight: 750; text-underline-offset: 3px; }
+.community-hub-action {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  padding: 23px 27px;
+  background: var(--forest);
+  color: #fff;
+  border-radius: 15px;
+}
+.community-hub-action p { margin: 0; color: #e6eee6; max-width: 690px; }
+.community-hub-action strong { display: block; margin-bottom: 4px; color: #fff; }
+.community-hub-action a {
+  border: 1px solid rgba(255,255,255,.65);
+  border-radius: 999px;
+  padding: 10px 17px;
+  text-decoration: none;
+  font-size: .89rem;
+  font-weight: 800;
+  color: #fff;
+}
+.community-hub-action a:hover { background: rgba(255,255,255,.12); }
+.community-hub-action-links { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+@media (max-width: 900px) {
+  .community-hub-header { grid-template-columns: 1fr; gap: 23px; }
+}
+@media (max-width: 620px) {
+  .community-hub h2 { font-size: clamp(2.15rem, 10vw, 3rem); }
+  .community-hub-item summary { padding: 18px 17px; flex-wrap: wrap; gap: 10px; font-size: 1rem; }
+  .community-hub-item summary::after { margin-left: auto; }
+  .community-hub-body { padding: 17px 17px 20px; }
+  .community-hub-action { padding: 23px 19px; }
+}
+
+
+.community-hub-header { grid-template-columns: minmax(0, 1fr) minmax(385px, .95fr); gap: clamp(24px, 4vw, 60px); }
+.community-hub-support { display: grid; grid-template-columns: minmax(0, 1fr) minmax(155px, .85fr); gap: 15px; align-items: start; }
+.community-hub-flyer { margin: 0; padding: 8px; background: #fff; border: 1px solid #d7e0d9; border-radius: 14px; box-shadow: 0 12px 26px rgba(18,32,24,.06); }
+.community-hub-flyer a { display: block; }
+.community-hub-flyer img { display: block; width: 100%; height: auto; border-radius: 7px; }
+.community-hub-flyer figcaption { margin: 8px 2px 3px; text-align: center; font-size: .75rem; line-height: 1.4; }
+.community-hub-flyer figcaption a { color: var(--forest-2); font-weight: 850; text-decoration: underline; text-underline-offset: 3px; }
+.community-hub-flyer a:focus-visible { outline: 3px solid var(--moss); outline-offset: 3px; border-radius: 5px; }
+@media (max-width: 900px) {
+  .community-hub-header { grid-template-columns: 1fr; }
+  .community-hub-support { grid-template-columns: minmax(0, 1fr) 230px; align-items: center; }
+}
+@media (max-width: 620px) {
+  .community-hub-support { grid-template-columns: 1fr; }
+  .community-hub-flyer { max-width: 300px; width: 100%; margin-inline: auto; }
+}
+
+
+/* Feature-sized Alliance flyer: readable directly on desktop without opening the image. */
+.community-hub-header {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+}
+.community-hub-header .community-hub-context {
+  margin-top: 28px;
+}
+.community-hub-support {
+  display: block;
+  min-width: 0;
+}
+.community-hub-flyer {
+  width: 100%;
+  max-width: 535px;
+  padding: 12px;
+  margin: 0 auto;
+}
+.community-hub-flyer figcaption { margin-top: 11px; font-size: .88rem; }
+@media (max-width: 900px) {
+  .community-hub-header { grid-template-columns: 1fr; align-items: start; }
+  .community-hub-support { display: block; }
+  .community-hub-flyer { max-width: 510px; }
+}
+@media (max-width: 620px) {
+  .community-hub-flyer { width: 100%; max-width: 100%; }
+}
+
 </style>
 <link href="https://www.savingpowers.com/" rel="canonical"/><meta content="https://www.savingpowers.com/" property="og:url"><link as="image" href="assets/hero-bike-tree.webp" rel="preload"/></meta></head>
 <body>
@@ -1053,6 +1232,7 @@ button, input, textarea, select { font: inherit; }
 </a>
 <nav aria-label="Primary navigation" class="desktop-nav">
 <a href="#issue">The issue</a>
+<a href="#community-news">News</a>
 <a href="#plan">Site plans</a>
 <a href="#timeline">Timeline</a>
 <a href="#record">Documents</a>
@@ -1064,6 +1244,7 @@ button, input, textarea, select { font: inherit; }
 <summary aria-label="Open navigation">Menu</summary>
 <nav aria-label="Mobile navigation">
 <a href="#issue">The issue</a>
+<a href="#community-news">News</a>
 <a href="#plan">Site plans</a>
 <a href="#timeline">Timeline</a>
 <a href="#record">Documents</a>
@@ -1160,6 +1341,66 @@ button, input, textarea, select { font: inherit; }
     </aside>
   </div>
 </section>
+
+<!-- Saving Powers Alliance: limited-scope community news update, November 2026. -->
+<section class="section community-hub" id="community-news" aria-labelledby="community-news-heading">
+  <div class="shell">
+    <div class="community-hub-header">
+      <div>
+        <p class="eyebrow">Saving Powers Alliance · Beyond Powers Avenue</p>
+        <h2 id="community-news-heading">Keeping our neighbors informed across Benton County.</h2>
+        <p class="community-hub-lede">Saving Powers began with the Northside Church proposal, but thoughtful land-use decisions matter throughout our region. The Alliance is expanding its focus on community information, transparent review, and opportunities for residents to participate.</p>
+        <aside class="community-hub-context" aria-label="About the Alliance">
+          <strong>The Northside campaign remains our immediate focus.</strong>
+          <p>We're also sharing public meeting information and planning resources that may matter to neighbors in Albany and the surrounding area. Each proposal has its own process and record.</p>
+        </aside>
+      </div>
+      <div class="community-hub-support">
+        <figure class="community-hub-flyer">
+          <a href="assets/benton-county-land-use-crossroads-2026-11.avif" target="_blank" rel="noopener noreferrer" aria-label="Open the Benton County Land Use at a Crossroads flyer">
+            <img src="assets/benton-county-land-use-crossroads-2026-11.avif" width="750" height="1004" loading="lazy" decoding="async" alt="Saving Powers Alliance flyer titled Benton County Land Use at a Crossroads, highlighting property rights, rural zoning standards, and infrastructure compliance">
+          </a>
+          <figcaption><a href="assets/benton-county-land-use-crossroads-2026-11.avif" target="_blank" rel="noopener noreferrer">View Alliance flyer ↗</a></figcaption>
+        </figure>
+      </div>
+    </div>
+    <h3 class="community-hub-title">News You Need to Be Aware Of</h3>
+    <div class="community-hub-items">
+      <details class="community-hub-item" open>
+        <summary><span class="community-hub-date">Nov 9 · 5:15 PM</span> Albany Planning Commission meeting</summary>
+        <div class="community-hub-body">
+          <p>The Albany Planning Commission meets <strong>Monday, November 9, 2026, at 5:15 PM</strong> in the City Hall Council Chambers, 333 Broadalbin Street SW, with virtual participation available.</p>
+          <p>The posted agenda includes a proposed annexation and zoning-map amendment near Clover Ridge Road NE and a separate public right-of-way vacation. <strong>Knox Butte is not listed as a hearing topic in that agenda.</strong> Please check the official materials before attending or submitting testimony.</p>
+          <p>To submit written comments or request to speak virtually, email <a href="mailto:cdaa@albanyoregon.gov">cdaa@albanyoregon.gov</a> with your name before noon on meeting day, as directed by the agenda.</p>
+          <p><a href="https://albanyoregon.gov/mnt/html/citycouncil/bcc/archive/2026/plc_20261109_agd.pdf" target="_blank" rel="noopener noreferrer">Read the November 9 agenda ↗</a> · <a href="https://albanyoregon.gov/council/groups/plc" target="_blank" rel="noopener noreferrer">Planning Commission meeting information ↗</a></p>
+        </div>
+      </details>
+      <details class="community-hub-item">
+        <summary><span class="community-hub-date">Planning watch</span> Knox Butte and other Albany-area proposals</summary>
+        <div class="community-hub-body">
+          <p>Interested in development around Knox Butte or elsewhere in Albany? The City posts land-use applications and hearing notices on its Planning Projects page, including project locations, review types, and available staff reports.</p>
+          <p><a href="https://albanyoregon.gov/planning/projects" target="_blank" rel="noopener noreferrer">Browse Albany's current planning projects ↗</a></p>
+        </div>
+      </details>
+      <details class="community-hub-item">
+        <summary><span class="community-hub-date">Policy discussion</span> Data centers and local land-use rules</summary>
+        <div class="community-hub-body">
+          <p>Albany's Planning Commission has discussed how the City might approach data-center development and the role of local land-use standards. The August 17 commission minutes record discussion of bringing the issue to City Council; they do not establish that new rules have been adopted.</p>
+          <p>Follow City Council and Planning Commission meeting materials for any formal proposals, hearings, or opportunities to comment.</p>
+          <p><a href="https://albanyoregon.gov/council/materials" target="_blank" rel="noopener noreferrer">City Council materials ↗</a> · <a href="https://albanyoregon.gov/council/groups/plc" target="_blank" rel="noopener noreferrer">Planning Commission ↗</a></p>
+        </div>
+      </details>
+    </div>
+    <div class="community-hub-action">
+      <p><strong>Want to make your voice heard?</strong> Write to Albany City Council or the Planning Department. The City's Planning page has staff contact information, including email, and the Planning Projects page lists applications and hearing materials.</p>
+      <div class="community-hub-action-links">
+        <a href="https://albanyoregon.gov/council" target="_blank" rel="noopener noreferrer">City Council ↗</a>
+        <a href="https://albanyoregon.gov/planning" target="_blank" rel="noopener noreferrer">Planning Department ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section aria-labelledby="photos-title" class="section landscape-photos" id="photos">
 <div class="shell">
 <div class="landscape-intro">
