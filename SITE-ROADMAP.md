@@ -38,10 +38,15 @@ Carry forward the current site's actual Georgia/Inter typography, forest/cream c
 - Maintenance and source checklist: `SITE-PLANNING-EDITORIAL.md`.
 - Human editor must still replace dated highlights with new verified events; responsive QA pending.
 
-## Part 4 — Documents and Get Involved
-- Preserve the searchable 21-document index; add clearer key-document previews and case-specific links.
-- Consolidate donations, $50 yard signs, campaign graphics, volunteering, contacts and social sharing.
-- Remove duplicate CTAs elsewhere only when it helps navigation.
+## Part 4 — Documents and Get Involved [IMPLEMENTED — review pending]
+- Preserved all 21 archive entries, five filing-stage groups, four featured source cards, and the exact `scripts/site.js` archive-search handler.
+- Added an introductory document guide, direct links to featured records and `#document-library`, and topic shortcuts for traffic, legal, site plans and testimony. `scripts/document-tools.js` dispatches the native search input event; it does **not** create a second filtering engine.
+- Added a source-provenance note distinguishing County, applicant, and neighborhood-authored materials.
+- On Get Involved, added a clear four-action menu: donate, yard signs, share materials, and connect. Existing original sign-drive instructions and original posters remain intact.
+- The existing GoFundMe link, $50 donation sign offer, `savingpowers@gmail.com` sign/receipt contact, Facebook group, and `SavingPowersAvenue@gmail.com` general contact are preserved.
+- Added a photos/video sharing prompt without an unrequested file upload service. Rephrased outdated pre-filing legal appeal language to avoid asserting current filing status.
+- Additive page CSS lives in `styles/documents.css` and `styles/get-involved.css`. The original shared CSS/JS and content assets remain unchanged.
+- Phase 4 interactive/browser QA and release review remain open.
 
 ## Part 5 — QA and release
 - Real desktop, tablet and 390px mobile checks; verify menu, timeline, document search, lightbox, deep links, images, PDFs, and keyboard interactions.
@@ -68,3 +73,8 @@ Carry forward the current site's actual Georgia/Inter typography, forest/cream c
 - Preserve legacy `community.html#community-news`, but link new homepage teasers directly to `#meetings`, `#issues`, and `#resources`.
 - Flyer's original 750x1004 AVIF asset remains unchanged; image stays a clickable full-size link.
 - Meeting labels automatically age, but do not auto-claim an outcome or fabricate minutes.
+
+## Phase 4 handoff QA
+- Search the 21-file Documents archive for `traffic`, `legal`, and `site plan`; verify visible counts, group expansion, status feedback, and Clear restoration (no duplicate search handler).
+- Confirm Get Involved's four jump links, unchanged donor instructions, live fundraiser destination, original two campaign posters, Facebook group, and both distinctly labeled contact addresses.
+- Verify production `main` remains at the earlier approved content version; no work on `site-refresh` is automatically merged.
