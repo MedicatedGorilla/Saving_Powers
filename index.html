@@ -575,7 +575,7 @@ button, input, textarea, select { font: inherit; }
 .campaign { background: #151c18; color: #fff; }
 .campaign .eyebrow { color: #b9cbbf; }
 .campaign .section-heading-row > p { color: rgba(255,255,255,.65); }
-.poster-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; margin-top: 48px; align-items: start; }
+.poster-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 48px; align-items: start; }
 .poster-grid a { border-radius: 17px; overflow: hidden; background: #222; box-shadow: 0 26px 60px rgba(0,0,0,.28); transition: transform .2s ease; }
 .poster-grid a:hover { transform: translateY(-6px); }
 .poster-grid img { width: 100%; height: auto; }
@@ -626,7 +626,7 @@ button, input, textarea, select { font: inherit; }
   .status-note { padding-left: 0; padding-top: 24px; border-left: 0; border-top: 1px solid rgba(255,255,255,.25); }
   .section-heading-row > p { justify-self: start; }
   .document-card { min-height: 0; }
-  .poster-grid { grid-template-columns: repeat(3, minmax(260px, 1fr)); overflow-x: auto; padding: 4px 2px 20px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .poster-grid { grid-template-columns: repeat(2, minmax(260px, 1fr)); overflow-x: auto; padding: 4px 2px 20px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
   .poster-grid a { scroll-snap-align: start; }
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
   .fine-print { justify-self: start; }
@@ -661,7 +661,7 @@ button, input, textarea, select { font: inherit; }
   .timeline article { grid-template-columns: 1fr; gap: 7px; padding-left: 26px; padding-bottom: 42px; }
   .timeline-content h3 { margin-top: 0; font-size: 1.45rem; }
   .concern-card { padding: 26px; }
-  .poster-grid { grid-template-columns: repeat(3, minmax(78vw, 1fr)); margin-inline: -2px; }
+  .poster-grid { grid-template-columns: repeat(2, minmax(78vw, 1fr)); margin-inline: -2px; }
   .help-actions { flex-direction: column; }
   .help-actions .button { width: 100%; }
 }
@@ -1453,9 +1453,6 @@ button, input, textarea, select { font: inherit; }
 </img></a>
 <a aria-label="Open That's Not What We Expected flyer full size" href="assets/flyer-not-expected.jpg" target="_blank">
 <img alt="That's Not What We Expected comparison flyer" loading="lazy" src="assets/flyer-not-expected.jpg"/>
-</a>
-<a aria-label="Open Not So American Gothic flyer full size" href="assets/flyer-american-gothic.jpg" target="_blank">
-<img alt="Not So American Gothic advocacy flyer" loading="lazy" src="assets/flyer-american-gothic.jpg"/>
 </a>
 </div>
 </div>
